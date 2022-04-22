@@ -6,7 +6,8 @@ set username=""
 set password=""
 set dst="http://192.168.1.1"
 set popup="true"
-set target="http://labkomti.net/login"
+set target=""
+set redirect="https://deri-kurniawan.github.io/autologin/internet-status.html"
 
 @REM <form name="sendin" action="http://labkomti.net/login" method="post">
 @REM 	<input type="hidden" name="username" value="mhs" />
@@ -20,4 +21,4 @@ set target="http://labkomti.net/login"
 
 timeout 5
 
-curl -d "username=%username%&password=%password%&dst=%dst%" -H "Content-Type: application/x-www-form-urlencoded" -X POST http://labkomti.net/login && start https://deri-kurniawan.github.io/autologin/internet-status.html
+curl -d "username=%username%&password=%password%&dst=%dst%" -H "Content-Type: application/x-www-form-urlencoded" -X POST %target% && start %redirect%
